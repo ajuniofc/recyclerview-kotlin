@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:title=""
+        android:icon="@drawable/ic_action_more_vert"
+        app:showAsAction="always">
+        <menu>
+            <item
+                android:id="@+id/task_list_menu_list"
+                android:title="@string/task_list_menu_list"
+                android:icon="@drawable/ic_action_view_list"
+                app:showAsAction="never"/>
+            <item
+                android:id="@+id/task_list_menu_grid"
+                android:title="@string/task_list_menu_grid"
+                android:icon="@drawable/ic_action_apps"
+                app:showAsAction="never"/>
+            <item
+                android:id="@+id/task_list_menu_note"
+                android:title="@string/task_list_menu_note"
+                android:icon="@drawable/ic_action_dashboard"
+                app:showAsAction="never"/>
+        </menu>
+    </item>
+</menu>

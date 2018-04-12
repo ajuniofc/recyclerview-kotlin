@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Tarefas</string>
+    <string name="task_item_title">Título</string>
+    <string name="task_item_description">Descrição</string>
+    <string name="task_item_date">dd/mm/aaaa</string>
+    <string name="task_list_menu_list">Lista</string>
+    <string name="task_list_menu_grid">Grade</string>
+    <string name="task_list_menu_note">Notas</string>
+    <string name="task_list_ADD">+</string>
+    <string name="form_activity_title">Nova Tarefa</string>
+    <string name="form_task_menu_save">Salvar</string>
+</resources>
