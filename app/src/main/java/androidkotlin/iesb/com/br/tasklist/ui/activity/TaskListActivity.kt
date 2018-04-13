@@ -27,29 +27,44 @@ class TaskListActivity : AppCompatActivity(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_task_list)
-        recyclerView = task_list
+        setupRecyclerView()
+        setupAddButton()
+    }
+
+    private fun setupAddButton() {
         addButton = task_list_add_button
         addButton?.setOnClickListener(this)
+    }
 
+    private fun setupRecyclerView() {
+        recyclerView = task_list
     }
 
     override fun onResume() {
         super.onResume()
-        configList()
+        configRecyclerView()
     }
 
-    private fun configList() {
+    private fun configRecyclerView() {
+        setAdapter()
+        layoutManagerBy(listType)
+    }
+
+    private fun setAdapter() {
         recyclerView?.adapter = TaskAdapter(list())
-        adapterBy(listType)
     }
 
     override fun onClick(view: View?) {
         when(view?.id){
             R.id.task_list_add_button ->{
-                startActivity(Intent(TaskListActivity@this, FormTaskActivity::class.java))
+                goToForm()
                 return
             }
         }
+    }
+
+    private fun goToForm() {
+        startActivity(Intent(TaskListActivity@ this, FormTaskActivity::class.java))
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -60,22 +75,22 @@ class TaskListActivity : AppCompatActivity(), View.OnClickListener {
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         when(item?.itemId){
             R.id.task_list_menu_list ->{
-                adapterBy(ListType.LIST)
+                layoutManagerBy(ListType.LIST)
                 return true
             }
             R.id.task_list_menu_grid ->{
-                adapterBy(ListType.GRID)
+                layoutManagerBy(ListType.GRID)
                 return true
             }
             R.id.task_list_menu_note ->{
-                adapterBy(ListType.NOTE)
+                layoutManagerBy(ListType.NOTE)
                 return true
             }
         }
         return super.onOptionsItemSelected(item)
     }
 
-    private fun adapterBy(type: ListType?) {
+    private fun layoutManagerBy(type: ListType?) {
         listType = type
         when(type){
             ListType.LIST ->{

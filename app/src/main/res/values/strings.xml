@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Tarefas</string>
+    <string name="app_name">Tarefas Kotlin</string>
     <string name="task_item_title">Título</string>
     <string name="task_item_description">Descrição</string>
     <string name="task_item_date">dd/mm/aaaa</string>
